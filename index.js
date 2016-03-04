@@ -14,6 +14,7 @@ var logger = function(req, res, next) {
 };
 
 var app = express();
+app.use(express.static(__dirname + '/public')); // use this line to push the public index.html page to the front end
 
 app.use(bodyParser.json());
 app.use(session({
@@ -23,7 +24,7 @@ app.use(session({
   resave: false, // if false, if session hasn't changed, wont' re-save session in memory | if true, will re-save session every time in memory
 }))
 
-app.get('/books', logger, BookController.index);
+app.get('/books', logger, BookController.index); 
 app.get('/books/:idx', BookController.show);
 app.put('/books/:idx', BookController.update);
 app.post('/books', BookController.create);

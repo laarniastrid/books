@@ -11,5 +11,9 @@ module.exports = [
     title: 'Everyone does numba 2',
     author: 'Sanitation Work #5',
     rating: 2
+  }, {
+    title: 'Clear and Present Danger',
+    author: 'Tom Clancey',
+    rating: 5
   }
 ]
